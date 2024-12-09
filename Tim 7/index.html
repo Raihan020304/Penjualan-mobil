@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoDeals - Penjualan Mobil</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="navbar-logo">Auto<span>Deals</span></a>
+        <ul class="navbar-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cars">Mobil</a></li>
+            <li><a href="#cart">Keranjang</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Temukan Mobil Impianmu</h1>
+            <p>Koleksi mobil berkualitas dengan harga terjangkau, hanya di AutoDeals.</p>
+            <a href="#cars" class="cta-button">Lihat Koleksi</a>
+        </div>
+    </header>
+    <!-- Hero Section End -->
+
+    <!-- Car Collection Section -->
+    <section class="car-collection" id="cars">
+        <h2>Koleksi Mobil Kami</h2>
+        <div class="car-container">
+            <!-- Car Item -->
+            <div class="car-card">
+                <img src="porsche.jpg" alt="Porsche 911">
+                <h3>Porsche 911</h3>
+                <p class="price">IDR 3,200,000,000</p>
+                <button onclick="addToCart('Porsche 911', 'IDR 3,200,000,000')" class="add-cart-btn">Tambah ke Keranjang</button>
+            </div>
+            <div class="car-card">
+                <img src="bmw.jpg" alt="BMW M3">
+                <h3>BMW M3</h3>
+                <p class="price">IDR 1,500,000,000</p>
+                <button onclick="addToCart('BMW M3', 'IDR 1,500,000,000')" class="add-cart-btn">Tambah ke Keranjang</button>
+            </div>
+            <div class="car-card">
+                <img src="audi.jpg " alt="Audi RS7">
+                <h3>Audi RS7</h3>
+                <p class="price">IDR 2,700,000,000</p>
+                <button onclick="addToCart('Audi RS7', 'IDR 2,700,000,000')" class="add-cart-btn">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </section>
+    <!-- Car Collection Section End -->
+
+    <!-- Cart Section -->
+    <section id="cart" class="cart">
+        <h2>Keranjang Anda</h2>
+        <ul id="cart-items">
+            <!-- Items will be added here dynamically -->
+        </ul>
+        <p id="empty-cart-message">Keranjang kosong</p>
+        <button id="checkout-btn" class="cta-button" onclick="openForm()">Lanjutkan ke Pembayaran</button>
+    </section>
+    <!-- Cart Section End -->
+
+    <!-- Checkout Form Section -->
+    <section id="checkout-form" class="checkout-form">
+        <h2>Formulir Pembelian</h2>
+        <form id="orderForm" onsubmit="submitOrder(event)">
+            <label for="name">Nama Pembeli</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email Pembeli</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Nomor HP Pembeli</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="address">Alamat Pembeli</label>
+            <textarea id="address" name="address" required></textarea>
+            
+            <button type="submit" class="cta-button">Kirim Pesanan</button>
+        </form>
+    </section>
+    <!-- Checkout Form Section End -->
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 AutoDeals - All Rights Reserved</p>
+    </footer>
+    <!-- Footer End-->
+
+    <!-- Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
